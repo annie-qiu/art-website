@@ -1,16 +1,18 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const allArtworks = await getCollection('artworks');
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={"Annie Qiu"}>
+	<div class="sm:columns-1 md:columns-2 gap-4 sm:gap-6">
+		{allArtworks.map((art) => 
+		<div class="mb-4 sm:mb-10 flex flex-col gap-2">
+			<Image src={art.data.image} alt={art.data.text}/>
+			<div class="text-xs font-mono text-light-gray">{art.data.text}</div>
+		</div>
+		)}
+	</div>
+</Layout>
