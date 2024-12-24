@@ -5,12 +5,11 @@ export default {
 		extend: {
 			fontFamily: {
 				mono: ['DM Mono'],
-				sans: ['neue-haas-unica'],
-				compagnon: ["Compagnon", "sans-serif"],
+				sans: ['neue-haas-unica']
 			},
 			colors: {
-				'light-gray': '#9aa4b3',
-				'dark-gray': '#262a3b',
+				'light-gray': 'rgb(151 151 151);',
+				'dark-gray': '#4f5458',
 				'orange': '#ed492f',
 			},
 			typography: {

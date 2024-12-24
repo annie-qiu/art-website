@@ -6,8 +6,8 @@ import { getCollection } from 'astro:content';
 const allArtworks = await getCollection('artworks');
 
 ---
-<Layout title={"Annie Qiu"}>
-	<div class="sm:columns-1 md:columns-2 gap-4 sm:gap-6">
+<Layout>
+	<div class="sm:columns-1 md:columns-2 gap-4 sm:gap-6 mb-10">
 		{allArtworks.map((art) => 
 		<div class="mb-4 sm:mb-10 flex flex-col gap-2">
 			<Image src={art.data.image} alt={art.data.text}/>
