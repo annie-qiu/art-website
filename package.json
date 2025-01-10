@@ -13,7 +13,6 @@
     "@astrojs/check": "^0.3.4",
     "@astrojs/react": "^4.1.2",
     "@astrojs/tailwind": "^5.1.0",
-    "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "astro": "^4.6.3",
     "react": "^19.0.0",
@@ -24,6 +23,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.14",
     "@types/node-isbn": "^1.6.4",
+    "@types/react": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
     "eslint": "^8.56.0",

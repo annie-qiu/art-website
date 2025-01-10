@@ -1,5 +1,6 @@
+import React, { type JSX } from "react";
 import "../styles/global.scss";
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface ModalProps {
   children: JSX.Element;
