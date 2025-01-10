@@ -1,13 +1,18 @@
 ---
+import kite from '../images/orangeicon.png';
+import { Image } from 'astro:assets';
+
 ---
 <div class="p-3 sm:p-6 text-dark-gray sm:fixed">
   <aside class="flex flex-col gap-2">
+    <Image src={kite} alt="kite" class="w-[4em]"/>
     <a href="/" class="" >
       <div class="text-lg">Annie Rui Qiu</div>
     </a>
     <div class="text-sm">b. 2002</div>
     <div class="flex flex-col cursor-default">
       <a class="hover:text-light-gray" href="/">→ WORK</a>
+      <a class="hover:text-light-gray" href="/print">→ PRINT</a>
       <a class="hover:text-light-gray" href="/info">→ INFO</a>
     </div>
   </aside>

@@ -10,4 +10,14 @@ const artworks = defineCollection({
 });
 
 
-export const collections = { artworks };
+const printworks = defineCollection({
+  type: 'data',
+  schema: ({ image }) => z.object({
+    text: z.string(),
+    image: image(),
+    size: z.string().optional(),
+  })
+});
+
+
+export const collections = { artworks, printworks };
