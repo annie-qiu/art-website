@@ -4,12 +4,12 @@ import { Image } from 'astro:assets';
 
 ---
 <div class="p-3 sm:p-6 text-dark-gray sm:fixed">
-  <aside class="flex flex-col gap-2">
-    <Image src={kite} alt="kite" class="w-[4em]"/>
+  <aside class="flex flex-col">
     <a href="/" class="" >
+      <Image src={kite} alt="kite" class="w-[4em] mb-2"/>
       <div class="text-lg">Annie Rui Qiu</div>
     </a>
-    <div class="text-sm">b. 2002</div>
+    <div class="text-sm mb-4">b. 2002</div>
     <div class="flex flex-col cursor-default">
       <a class="hover:text-light-gray" href="/">→ WORK</a>
       <a class="hover:text-light-gray" href="/print">→ PRINT</a>
