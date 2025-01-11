@@ -8,8 +8,8 @@ export default {
 				sans: ['neue-haas-unica']
 			},
 			colors: {
-				'light-gray': 'rgb(151 151 151);',
-				'dark-gray': '#4f5458',
+				'light-gray': 'rgb(155 158 166);',
+				'dark-gray': '#111211',
 				'orange': '#ed492f',
 			},
 			typography: {
