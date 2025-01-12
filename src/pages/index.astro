@@ -11,7 +11,7 @@ const years = ["2024", "older"];
 		<div class="flex flex-col gap-4">
 		{years.map((year) => 
 		<div class="text-sm font-mono text-light-gray">{year}</div>
-		<div class="sm:columns-1 md:columns-2 gap-12 mb-10">
+		<div class="sm:columns-1 md:columns-2 gap-12 ">
 			{allArtworks.filter((art) =>( art.data.year === year)).map((art) => 
 			<div class="mb-6 sm:mb-10 flex flex-col gap-4 break-inside-avoid-column">
 				<Modal client:load>
