@@ -5,7 +5,7 @@ const artworks = defineCollection({
   schema: ({ image }) => z.object({
     text: z.string(),
     image: image(),
-    year: z.number(),
+    year: z.string(),
   })
 });
 

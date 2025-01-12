@@ -4,17 +4,27 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Modal from '../components/Modal';
 const allArtworks = await getCollection('artworks');
-
+const years = ["2024", "older"];
 ---
 <Layout>
-	<div class="sm:columns-1 md:columns-2 gap-6 mb-10">
-		{allArtworks.map((art) => 
-		<div class="mb-6 sm:mb-10 flex flex-col gap-2">
-			<Modal client:load>
-				<Image src={art.data.image} alt={art.data.text} class="max-h-[90vh] w-auto m-auto"/>
-			</Modal>
-			<div class="text-xs font-mono text-light-gray">{art.data.text}</div>
+	<div class="flex flex-col">
+		<div class="flex flex-col gap-4">
+		{years.map((year) => 
+		<div class="text-sm font-mono text-light-gray">{year}</div>
+		<div class="sm:columns-1 md:columns-2 gap-12 mb-10">
+			{allArtworks.filter((art) =>( art.data.year === year)).map((art) => 
+			<div class="mb-6 sm:mb-10 flex flex-col gap-4 break-inside-avoid-column">
+				<Modal client:load>
+					<Image src={art.data.image} alt={art.data.text} class="max-h-[90vh] w-auto m-auto"/>
+				</Modal>
+				<div class="text-xs font-mono text-light-gray break-after-auto">{art.data.text}</div>
+			</div>
+			)}
+			
 		</div>
-		)}
+		)
+		}
+		</div>
+
 	</div>
 </Layout>
