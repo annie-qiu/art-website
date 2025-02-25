@@ -30,7 +30,7 @@ const Modal = (props: ModalProps) => {
             <div className="p-4">
               {props.children}
             </div>
-            <div className="m-auto p-2 text-sm text-dark-gray">{props.text}</div>
+            <div className="m-auto p-2 text-xs text-light-gray font-mono">{props.text}</div>
            </div>
           }
       </div>
