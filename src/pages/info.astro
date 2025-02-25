@@ -1,11 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SmallerLayout from '../layouts/SmallerLayout.astro';
 ---
-<Layout>
-  <div class="text-dark-gray flex flex-col gap-8">
-    <div class="flex flex-col gap-4">
-      <div class="border-b-[1px] border-dark-gray pb-2">INFO</div>
-      <div class="text-sm">
+<SmallerLayout>
+  <div class="text-dark-gray flex flex-col gap-8 ml-0">
+    <div class="flex flex-col gap-4 ml-0">
+
+      <div class="text-sm mt-2">
         Annie Rui Qiu (b. 2002) is an artist from Shanghai, China living in New Hampshire. She paints interior scenes that toe the line between familiarity and foreignness. 
         Household objects, figures in communal spaces, and glimpses of abstracted exteriors are depicted with mixed perspectives and varied patterns. 
         Moments from everyday routines and imagined interior spaces offer spaces for introspection. 
@@ -15,12 +15,13 @@ import Layout from '../layouts/Layout.astro';
         <br />
         Instagram: <a href="https://www.instagram.com/annieruiqiu" class="underline underline-offset-4 cursor-pointer" target="_blank">@annieruiqiu</a></div>
     </div>
-    <div class="flex flex-col gap-4">
-      <div class="border-b-[1px] border-dark-gray pb-2">CV</div>
-      <div class="text-sm flex flex-col gap-4">
-
+    <div class="flex flex-col gap-2">
+      <div class="flex">
+        <div class="border-b-[1px] border-dark-gray">CV</div>
+      </div>
+      <div class="text-sm flex flex-col gap-2">
         <div>
-          <div>EDUCATION</div>
+          <div class="font-medium">Education</div>
           <div class="flex flex-row">
             <div class="mr-2">2024</div>
             <div>
@@ -30,7 +31,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div>
-          <div>EXHIBITIONS</div>
+          <div class="font-medium">Exhibitions</div>
+          <div class="italic">Group Exhibitions</div>
           <div class="flex flex-row">
             <div class="mr-2">2024</div>
             <div>
@@ -42,20 +44,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div>
-          <div>RESIDENCIES</div>
+          <div class="font-medium">Awards/Residencies</div>
           <div class="flex flex-row">
             <div class="mr-2">2024</div>
             <div>
-              <div><i>ACENTRICSPACE</i>, Zhujiajiao, Shanghai, CN</div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div>AWARDS</div>
-          <div class="flex flex-row">
-            <div class="mr-2">2024</div>
-            <div>
+              <div>Artist in Residence, <i>ACENTRICSPACE</i>, Zhujiajiao, Shanghai, CN</div>
               <div><i>Robert Read Prize for Achievement in Studio Art</i>, Dartmouth College</div>
               <div><i>Class of 1960/Residential Office Purchase Award</i>, Dartmouth College</div>
               <div><i>Citations of Academic Excellence in Senior Seminar, Painting I, and Drawing I</i>, Dartmouth College</div>
@@ -68,4 +61,4 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
   </div>
-</Layout>
+</SmallerLayout>
