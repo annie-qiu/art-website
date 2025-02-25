@@ -4,6 +4,7 @@ import { useState } from "react";
 
 interface ModalProps {
   children: JSX.Element;
+  text: string,
 }
 
 const Modal = (props: ModalProps) => {
@@ -20,15 +21,16 @@ const Modal = (props: ModalProps) => {
         {props.children}
       </div>
 
-      <div onClick={() => setIsOpen(false)} className={`z-0 fixed inset-0 bg-white ${isOpen ? "block" : "hidden"}`}></div>
+      <div onClick={() => setIsOpen(false)} className={`z-0 fixed overflow-hidden h-full inset-0 bg-white ${isOpen ? "block" : "hidden"}`}></div>
       
-      <div onClick={() => setIsOpen(false)} className="z-10 fixed top-0 left-0 w-full">
+      <div onClick={() => setIsOpen(false)} className="z-10 fixed top-0 left-0 w-full overflow-hidden">
           {isOpen &&
-          <div>
+          <div className="flex flex-col">
             <div className="fixed p-6 right-0 cursor-pointer text-xl text-dark-gray" onClick={() => setIsOpen(false)}>x</div>
-            <div className="p-10">
+            <div className="p-4">
               {props.children}
             </div>
+            <div className="m-auto p-2 text-sm text-dark-gray">{props.text}</div>
            </div>
           }
       </div>

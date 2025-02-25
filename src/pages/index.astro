@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import Modal from '../components/Modal';
 const allArtworks = await getCollection('artworks');
 const years = ["2025", "2024", "older"];
+
 ---
 <Layout>
 	<div class="flex flex-col">
@@ -14,7 +15,7 @@ const years = ["2025", "2024", "older"];
 		<div class="sm:columns-1 md:columns-2 gap-12 ">
 			{allArtworks.filter((art) =>( art.data.year === year)).map((art) => 
 			<div class="mb-6 sm:mb-10 flex flex-col gap-4 break-inside-avoid-column">
-				<Modal client:load>
+				<Modal client:load text={art.data.text}>
 					<Image src={art.data.image} alt={art.data.text} class="max-h-[90vh] w-auto m-auto"/>
 				</Modal>
 				<div class="text-xs font-mono text-light-gray break-after-auto">{art.data.text}</div>
