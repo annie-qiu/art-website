@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const allArtworks = await getCollection('artworks');
+
+export async function getStaticPaths() {
+  const artworks = await getCollection('artworks');
+
+  return artworks.map(art => ({
+    params: { id: art.id },
+    props: { art },
+  }));
+}
+
+const { art } = Astro.props;
+const currentArtIndex = allArtworks.findIndex((art) => art.id == Astro.params.id);
+const prevArt = currentArtIndex + 1 === allArtworks.length ? allArtworks[0] : allArtworks[currentArtIndex + 1];
+const nextArt = currentArtIndex === 0 ? allArtworks[allArtworks.length - 1] : allArtworks[currentArtIndex - 1];
+---
+<Layout>
+  <div class="flex">
+    <div class="m-auto">
+      <Image src={art.data.image} alt={art.data.text} class="m-auto max-h-[90vh] w-auto"/>
+    </div>
+  </div>
+  <div class="left-0 bottom-0 flex sm:fixed flex-col sm:w-[16em] md:w-[16em] lg:w-[24em] p-0 mt-4 sm:p-6 gap-2">
+    <div>
+      <div class="text-dark-gray text-md">{art.data.title}</div>
+      <div class="text-dark-gray text-sm">{art.data.text}</div>
+    </div>
+    <div class="text-light-gray text-sm">
+
+      { <a href={`/${prevArt.id}/`} class="hover:text-dark-gray transition-all">← prev</a> <span>/</span> 
+      <a href={`/${nextArt.id}/`} class="hover:text-dark-gray transition-all">next →</a>}
+    </div>
+    <a href="/" class="text-light-gray text-sm hover:text-dark-gray transition-all">Show All</a>
+
+  </div>
+</Layout>
