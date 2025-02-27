@@ -15,9 +15,11 @@ export async function getStaticPaths() {
 }
 
 const { art } = Astro.props;
-const currentArtIndex = allArtworks.findIndex((art) => art.id == Astro.params.id);
-const prevArt = currentArtIndex + 1 === allArtworks.length ? allArtworks[0] : allArtworks[currentArtIndex + 1];
-const nextArt = currentArtIndex === 0 ? allArtworks[allArtworks.length - 1] : allArtworks[currentArtIndex - 1];
+const numArt = allArtworks.length;
+const sortedArt = allArtworks.sort((a, b) => (a.data.sortOrder - b.data.sortOrder))
+const currentArtIndex = sortedArt.findIndex((art) => art.id == Astro.params.id);
+const prevArt = currentArtIndex + 1 === numArt ? sortedArt[0] : sortedArt[currentArtIndex + 1];
+const nextArt = currentArtIndex === 0 ? sortedArt[numArt - 1] : sortedArt[currentArtIndex - 1];
 ---
 <Layout>
   <div class="flex h-full">

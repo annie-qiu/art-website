@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import Modal from '../components/Modal';
 const allArtworks = await getCollection('artworks');
 const years = ["2025", "2024", "older"];
+const sortedArt = allArtworks.sort((a, b) => (b.data.sortOrder - a.data.sortOrder))
 
 ---
 <Layout>
@@ -13,7 +14,8 @@ const years = ["2025", "2024", "older"];
 		{years.map((year) => 
 		<div class="text-xs text-light-gray mb-2 md:mb-0">{year}</div>
 			<div class="sm:columns-1 md:columns-2 gap-6 lg:gap-8 ">
-				{allArtworks.filter((art) => (art.data.year === year)).reverse().map((art) => 
+				{sortedArt.filter((art) => (art.data.year === year))
+				.map((art) => 
 				<div class="mb-6 sm:mb-8 flex flex-col gap-4 break-inside-avoid-column">
 					{/* <Modal client:load text={art.data.text}>
 						<Image src={art.data.image} alt={art.data.text} class="max-h-[90vh] w-auto m-auto"/>

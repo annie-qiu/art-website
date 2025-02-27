@@ -7,6 +7,7 @@ const artworks = defineCollection({
     text: z.string(),
     image: image(),
     year: z.string(),
+    sortOrder: z.number(),
   })
 });
 
