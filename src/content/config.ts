@@ -18,6 +18,7 @@ const printworks = defineCollection({
     text: z.string(),
     image: image(),
     size: z.string().optional(),
+    sortOrder: z.number(),
   })
 });
 

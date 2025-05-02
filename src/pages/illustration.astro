@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+const allPrintWorks = await getCollection('printworks');
+
+---
+<Layout>
+	<div class="columns-1 max-w-[50em] gap-6 mb-10">
+		{allPrintWorks.map((print) => 
+		<div class="mb-6 sm:mb-10 flex flex-col gap-2 sm:gap-4">
+      { print.data.size ? <Image src={print.data.image} alt={print.data.text} class="w-auto m-auto"/> :
+      <Image src={print.data.image} alt={print.data.text} class="max-h-[90vh] w-auto m-auto"/> }
+			<div class="text-xs text-light-gray m-auto text-center">{print.data.text}</div>
+
+		</div>
+		)}
+	</div>
+</Layout>
