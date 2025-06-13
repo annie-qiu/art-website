@@ -21,9 +21,12 @@ const sortedArt = allArtworks.sort((a, b) => (b.data.sortOrder - a.data.sortOrde
 					<Image src={art.data.image} alt={art.data.text} class="max-h-[90vh] w-auto m-auto"/>
 				</Modal> */}
 				<a href={`/${art.id}`}><Image src={art.data.image} alt={art.data.text}/></a>
-				<div class="flex m-auto gap-1 md:hidden">
+				{/* <div class="flex m-auto gap-1 md:hidden">
 					<div class="text-xs text-light-gray relative">{art.data.title}, </div>
 					<div class="text-xs text-light-gray relative">{art.data.text}</div>
+				</div> */}
+				<div class="m-auto md:hidden">
+					<div class="text-xs text-light-gray relative text-center">{art.data.title}, {art.data.text}</div>
 				</div>
 		</div>
 			)}
