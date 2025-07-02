@@ -4,8 +4,8 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Modal from '../components/Modal';
 const allArtworks = await getCollection('artworks');
-const years = ["2025", "2024", "older"];
-const sortedArt = allArtworks.sort((a, b) => (b.data.sortOrder - a.data.sortOrder))
+const years = ["2025", "2024"];
+const sortedArt = allArtworks.sort((a, b) => (b.data.sortOrder - a.data.sortOrder)).filter((art) => (!art.data.hidden))
 
 ---
 <Layout>
